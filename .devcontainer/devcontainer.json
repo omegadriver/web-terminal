@@ -1,0 +1,26 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "TypeScript + Angular + xterm.js",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "Angular.ng-template"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+      }
+    }
+  },
+
+  "containerEnv": {
+    "NG_CLI_ANALYTICS": "false"
+  },
+
+  "forwardPorts": [3000, 4200],
+
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y python3 build-essential && npm install -g npm@latest @angular/cli@latest && if [ -f package.json ]; then npm install; fi && npm install @xterm/xterm @xterm/addon-fit @xterm/addon-web-links ws node-pty && npm install -D @types/ws",
+  "remoteUser": "node"
+}
