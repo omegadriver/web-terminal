@@ -1,0 +1,15 @@
+#terminalcontainer {
+    padding: 0.5rem;
+    margin: 0;
+    height: calc(100dvh - 7.5rem);
+    margin: 2rem 10rem;
+    background-color: var(--terminal-color);
+    border: 0.05rem solid var(--terminal-border-color);
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#terminalcontainer:hover {
+    transform: scale(1.01);
+}

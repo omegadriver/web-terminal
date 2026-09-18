@@ -1,0 +1,25 @@
+header {
+    margin: 0;
+    padding: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.terminal-header-content {
+    padding: 0;
+    margin: 0;
+    font-size: 2em;
+    text-decoration: none;
+    color: var(--header-color);
+}
+
+.terminal-header-content:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.terminal-header-content:active {
+    transform: scale(0.95);
+}

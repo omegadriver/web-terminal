@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --background-color: #151515;
+  --terminal-color: #1B1B1A;
+  --terminal-border-color: #323231;
+  --text-color: #EAECED;
+  --header-color: #8BE963;
+  --font-family: monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  overflow-y: hidden;
+}

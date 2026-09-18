@@ -1,17 +1,14 @@
-// Componente que implementa o xterm.js
-
 import { Component, ElementRef, viewChild, afterNextRender } from '@angular/core';
 import { Terminal } from '@xterm/xterm';
-
-import { HeaderComponent } from './components/header-component/header-component';
-import { TerminalComponent } from './components/terminal-component/terminal-component';
+import { FitAddon } from '@xterm/addon-fit';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.html',
-  imports: [TerminalComponent, HeaderComponent],
+  standalone: true,
+  selector: 'app-terminal-component',
+  styleUrl: './terminal-component.css',
+  templateUrl: './terminal-component.html',
 })
-export class App {
+export class TerminalComponent {
   private terminalcontainer = viewChild.required<ElementRef<HTMLDivElement>>('terminalcontainer');
 
   constructor() {
@@ -24,7 +21,12 @@ export class App {
           }
         }
       );
+      const fitAddon = new FitAddon();
+      terminal.loadAddon(fitAddon);
+
       terminal.open(this.terminalcontainer().nativeElement);
+
+      fitAddon.fit();
 
       const ws = new WebSocket('ws://localhost:8080');
 
